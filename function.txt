@@ -1,0 +1,133 @@
+  /* alert()在浏览器的弹出框输出内容----调bug
+    document.write() 直接在页面输出内容----调bug
+    console.log()/console.dir()在浏览器的控制台输出内容
+    innerHTML/innerText--动态向元素添加内容或者HTML代码*///对象。事件 = 添加的内容
+   // document文档
+   // Element
+
+
+ //js 的命名方式：
+    //1 严格区分大小写test TEST Test 各自代表三个不同的个体
+    //2 使用驼峰命名法
+    //1）第一个单词小写 其余有意义的单词首字母大写
+   // 2）可以使用数字 字母 下划线 $组成名称  不能用数字开头 也不能用纯数字作为名称  不能用汉字
+    //不能使用关键字 和保留字命名
+    //关键字：在js中有特殊意义的单词
+    //保留字：将来有可能成为关键字的单词
+    //
+
+
+js的输出方式
+ /*
+    alert() -- 在浏览器的弹出框里面输出内容 -- 调bug
+    document.write()  -- 直接在页面输出内容
+    console.log/console.dir -- 在浏览器的控制台输出内容 -- 调bug
+    innerHTML/innerText -- 动态向元素内添加内容或者html代码
+    */
+    var str="努力不一定有收获，但是不努力就一定没有收获！";
+    //获取要操作的对象
+    var oDiv=document.getElementById("box");
+    //document 文档对象
+    //get   获取
+    //element 元素
+    //by 通过
+    //id 标签属性 （属性值）
+    //在整个文档中，通过idName获取一个元素
+    //console.dir(oDiv);
+    oDiv.innerHTML=str;
+    //对象.事件   = 添加的内容
+
+
+
+ //js的命名方式：
+    var oDiv="xxx";
+    //1、严格区分大小写  test Test TEST 各自代表三个不同的个体
+    //2、使用驼峰命名法
+    //1）第一个单词小写，其余有意义的单词首字母大写 className  idName cName（单词不是拼音）xiMenChuiXue（错误的）ouyangDrug
+    //2）可以使用数字，字母，下划线，$组成名称，需注意不能用数字作为开头，也不能用纯数字作为名称，不能使用汉字命名
+    //_obj  $str          1num(X) 222 333(X)
+    //3、不能使用关键字和保留字命名
+    //关键字：在js中有特殊意义的单词 var length
+    //保留字：将来有可能成为关键字的单词
+    
+    //关键字保留字在面试之前一定要去背一下
+
+
+ //js中的变量：存储值和代表值的
+    //创建一个变量
+    //var  变量名=变量值;
+    //声明 变量名=变量值;
+    //js中的变量可以存储任何数据类型的值，因为js中的变量是松散类型的
+    var num=18;//数字
+    var str="居贺";//字符串
+    var str1="张鑫";
+    var boo=true;//布尔 true/false
+    var n=null;// null 空
+    var un=undefined;// undefined 找不到
+    var ary=[1,2,3,5];//数组
+    var obj={name:"张阔",age:16};//对象
+    var fun=function(){
+        //函数也就是一个方法
+        //this.onclick=;
+    };
+    var reg=/^$/;//正则 筛选
+    console.log(obj);
+
+
+
+
+
+//number 数字包括正数 负数 小数 0 NaN
+    //7  -8  1.2  0.2   0
+    //NaN  not a number  不是一个有效数字
+
+    //var val=12;
+    //验证val里面的值，是否是一个有效数字
+    //isNaN()//检测一个值不是有效数字 如果是有效数字返回false 如果不是有效数字返回true
+    //console.log(isNaN(val));//在控制台中输出判断结果
+    //false
+    //var val="12";//string
+    //console.log(isNaN(val));//false
+    //在检测值是否是有效数字之前，会默认的将值先转化为number数据类型，然后在进行检测
+    //这里调用的是Number();方法 ---- 强制将其他数据类型转化为number数据类型
+    //Number()如果值不是一个有效数字，返回NaN
+    //var val=[1,2];
+    //var val="12.3";
+    //console.log(Number(val));
+
+    //非强制转化为数字数据类型
+    //parseFloat()/parseInt()
+    //将值从左到右依次查找，遇到非数字就停止
+    //parseFloat 可以比 parseInt 多识别一个小数点
+    //    var val="12.3px";
+    //    console.log(parseFloat(val));//12.3
+    //    console.log(parseInt(val));//12
+    //var val="width:12px";
+    //console.log(parseFloat(val));//NaN
+    //console.log(parseInt(val));//NaN
+
+    //NaN和NaN进行比较的时候 永远不相等
+    //在js中可以用两个等号 进行比较  val1==val2 比较等号两侧的值是否相等
+    //console.log(NaN==NaN);//false
+
+    var val=Number("12.5px");//NaN
+    if(val==12.5){
+        console.log(12.5);
+    }else if(val==NaN){
+        console.log("NaN");
+    }else{
+        console.log("你说是什么？");
+    }
+    //
+    //基本数据类型有且只有五个  number（数字） boolean（布尔） string（字符串） null undefined
+    //引用数据类型：{
+    // 对象数据类型（object） Array 数组类  Object 对象类  RegExp 正则类  String字符串类   Date 时间类......
+    // 函数数据类型（function）
+    // }
+
+    //js中万物皆对象  类是具体的分类  实例是类里面一个具体的物
+
+
+    //js中一个等号 “ = ” 代表赋值
+    //var num=3; 将3这个值赋予到num这个变量中
+
